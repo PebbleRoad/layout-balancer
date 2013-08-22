@@ -27,11 +27,13 @@ img {
     width: 33.33333%;
     padding: 1em;
     border: 1px #000 solid; }
-  .grids .orphan-column-1 {
+  .grids[data-columns="4"] li {
+    width: 25%; }
+  .grids .orphan-column-1, .grids[data-columns] .orphan-column-1 {
     width: 100%; }
-  .grids .orphan-column-2 {
+  .grids .orphan-column-2, .grids[data-columns] .orphan-column-2 {
     width: 50%; }
-  .grids .orphan-column-3 {
+  .grids .orphan-column-3, .grids[data-columns] .orphan-column-3 {
     width: 33.33333%; }
 
 /**

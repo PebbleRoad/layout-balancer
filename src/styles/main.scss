@@ -36,15 +36,19 @@ img{max-width: 100%;}
 		border: 1px #000 solid;
 	}
 
-	.orphan-column-1{
+	&[data-columns="4"] li{
+		width: 100/4 * 1%;
+	}
+
+	.orphan-column-1, &[data-columns] .orphan-column-1{
 		width: 100%;
 	}
 
-	.orphan-column-2{
+	.orphan-column-2, &[data-columns] .orphan-column-2{
 		width: 50%;
 	}
 
-	.orphan-column-3{
+	.orphan-column-3, &[data-columns] .orphan-column-3{
 		width: 100/3 * 1%;
 	}
 }
