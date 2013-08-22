@@ -1,0 +1,45 @@
+block variables
+	title = 'Layout Balancer'
+extends layouts/_default
+
+block content
+	h3 Balancing grid based content
+
+	ul.grids.balancer(data-columns='3')
+		li
+			h4 Lorem ipsum dolor sit amet
+			p: img(src="http://placehold.it/960x411", alt="")
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+		li
+			h4 Lorem ipsum dolor sit amet
+			p: img(src="http://placehold.it/960x411", alt="")
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+		li
+			h4 Lorem ipsum dolor sit amet
+			p: img(src="http://placehold.it/350x150", alt="")
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+		li
+			h4 Lorem ipsum dolor sit amet
+			p: img(src="http://placehold.it/350x150", alt="")
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+
+
+
+		
+
+		
+
+
+
+block footer
+	// build:js scripts/jquery.layout.balancer.js 
+	script(src="scripts/jquery.layout.balancer.js")
+	// endbuild 
+	script
+		$(function(){
+			$('.balancer').layoutBalancer();
+		});

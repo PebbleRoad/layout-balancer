@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Layout Balancer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css">
+    <!-- build:css({.tmp,app}) styles/main.css		-->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild-->
+  </head>
+  <body>
+    <!-- Container-->
+    <div class="container">
+      <h3>Balancing grid based content</h3>
+      <ul data-columns="3" class="grids balancer">
+        <li>
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p><img src="http://placehold.it/960x411" alt=""></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+        <li>
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p><img src="http://placehold.it/960x411" alt=""></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+        <li>
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p><img src="http://placehold.it/350x150" alt=""></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+        <li>
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p><img src="http://placehold.it/350x150" alt=""></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+      </ul>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js">		</script>
+    <!-- build:js scripts/jquery.layout.balancer.js -->
+    <script src="scripts/jquery.layout.balancer.js"></script>
+    <!-- endbuild -->
+    <script>
+      $(function(){
+       $('.balancer').layoutBalancer();
+      });
+    </script>
+  </body>
+</html>
