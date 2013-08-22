@@ -4,6 +4,8 @@ extends layouts/_default
 
 block content
 	h3 Balancing grid based content
+	
+	button.toggle Enable Layout Balancer
 
 	ul.grids.balancer(data-columns='3')
 		li
@@ -26,10 +28,35 @@ block content
 			p: img(src="http://placehold.it/350x150", alt="")
 			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
+	
+	button.toggle Enable Layout Balancer
 
+	ul.grids.balancer(data-columns='3')
+		li
+			h4 Lorem ipsum dolor sit amet
+			p: img(src="http://placehold.it/960x411", alt="")
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
+		li
+			h4 Lorem ipsum dolor sit amet
+			p: img(src="http://placehold.it/960x411", alt="")
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
-		
+		li
+			h4 Lorem ipsum dolor sit amet
+			p: img(src="http://placehold.it/350x150", alt="")
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+		li
+			h4 Lorem ipsum dolor sit amet
+			p: img(src="http://placehold.it/350x150", alt="")
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+		li
+			h4 Lorem ipsum dolor sit amet
+			p: img(src="http://placehold.it/350x150", alt="")
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
 
 		
 
@@ -41,5 +68,23 @@ block footer
 	// endbuild 
 	script
 		$(function(){
-			$('.balancer').layoutBalancer();
+			$('.toggle')
+			.on('click', function(){							
+				var $this = $(this);
+				if(!$this.hasClass('active')){
+					
+					$this.next().layoutBalancer();
+					$this.text('Disable Layout Balancer');
+					$this.addClass('active');
+
+				}else{
+					
+					$(this).next().destroylayoutBalancer();
+					$this.removeClass('active');
+					$this.text('Enable Layout Balancer');
+				}
+					
+				
+			});
+			
 		});

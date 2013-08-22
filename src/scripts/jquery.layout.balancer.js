@@ -54,7 +54,7 @@
          * Children
          */
 
-        base.$el.children = base.$el.children();
+        base.$el.child = base.$el.children();
 
 
         /**
@@ -64,10 +64,9 @@
 
         base.init = function(){
 
-            this.orphans = base.$el.children.length % base.options.columns;
-            console.log('Total orphans: ' + this.orphans);
+            this.orphans = base.$el.child.length % base.options.columns;
 
-            base.$el.children
+            base.$el.child
                 .slice(0,this.orphans)
                 .addClass('orphan-column-'+this.orphans);
 
@@ -80,6 +79,17 @@
          */
 
         base.init();
+
+        /**
+         * Destroy Method
+         */
+        
+        base.destroy = function(){
+           base.$el.child.removeClass(function(i, klass){
+                return (klass.match (/\orphan-\S+/g) || []).join(' ');
+           });
+        };        
+
 
     };
 
@@ -104,9 +114,18 @@
 
     // This function breaks the chain, but returns
     // the layoutBalancer if it has been attached to the object.
-    $.fn.getlayoutBalancer = function(){
+    $.fn.getlayoutBalancer = function(){        
         this.data('layoutBalancer');
     };
 
+    /**
+     * Destroy
+     */
+
+    $.fn.destroylayoutBalancer = function(){    
+        this.each(function(){
+            $(this).data('layoutBalancer').destroy();
+        })        
+    };
 
 })(jQuery, undefined);

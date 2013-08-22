@@ -21,7 +21,8 @@ html.no-js(lang='en')
 		.container
 			block content
 			
-				
-		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js')		
+		// build:js scripts/jquery.js 
+		script(src='bower_components/jquery/jquery.js')		
+		// endbuild 
 
 		block footer

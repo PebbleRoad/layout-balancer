@@ -13,6 +13,7 @@
     <!-- Container-->
     <div class="container">
       <h3>Balancing grid based content</h3>
+      <button class="toggle">Enable Layout Balancer</button>
       <ul data-columns="3" class="grids balancer">
         <li>
           <h4>Lorem ipsum dolor sit amet</h4>
@@ -35,12 +36,53 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
         </li>
       </ul>
+      <button class="toggle">Enable Layout Balancer</button>
+      <ul data-columns="3" class="grids balancer">
+        <li>
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p><img src="http://placehold.it/960x411" alt=""></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+        <li>
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p><img src="http://placehold.it/960x411" alt=""></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+        <li>
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p><img src="http://placehold.it/350x150" alt=""></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+        <li>
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p><img src="http://placehold.it/350x150" alt=""></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+        <li>
+          <h4>Lorem ipsum dolor sit amet</h4>
+          <p><img src="http://placehold.it/350x150" alt=""></p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </li>
+      </ul>
     </div>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.min.js">		</script>
+    <script src="scripts/jquery.js"></script>
     <script src="scripts/jquery.layout.balancer.js"></script>
     <script>
       $(function(){
-       $('.balancer').layoutBalancer();
+       $('.toggle')
+       .on('click', function(){							
+        var $this = $(this);
+        if(!$this.hasClass('active')){
+         $this.next().layoutBalancer();
+         $this.text('Disable Layout Balancer');
+         $this.addClass('active');
+         
+        }else{
+         $(this).next().destroylayoutBalancer();
+         $this.removeClass('active');
+         $this.text('Enable Layout Balancer');
+        }
+       });
       });
     </script>
   </body>
